@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.2/.schema/devbox.schema.json",
+  "packages": [
+    "uv@latest",
+    "act@latest",
+    "tree@latest",
+    "go-task@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+        "welcome": [
+            "echo '🎵🐙🥑 Welcome to musical-octo-guacamole!'",
+            "echo 'A standardized workspace structure:'",
+            "tree -I '.git|.venv|.devbox|.uv'"
+  ]
+}
+  }
+}

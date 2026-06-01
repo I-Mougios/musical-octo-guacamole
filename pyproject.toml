@@ -1,0 +1,14 @@
+[project]
+name = "musical-octo-guacamole"
+version = "0.1.0"
+description = "My definitive recipe for a modern Python multi-project workspace."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[tool.uv]
+managed = true
+package = false
+
+[tool.uv.workspace]
+members = ["apps/*", "packages/*"]
