@@ -12,3 +12,17 @@ package = false
 
 [tool.uv.workspace]
 members = ["apps/*", "packages/*"]
+
+[tool.ruff.lint]
+# Enable specific rule categories
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes (syntax/bugs)
+    "W",   # pycodestyle warnings
+    "B",   # flake8-bugbear (design traps)
+    "S",   # Bandit (SAST Security scanning)
+    "I",   # isort (clean import sorting)
+]
+
+# Ignore specific rules if they get too annoying
+ignore = []

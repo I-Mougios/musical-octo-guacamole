@@ -1,0 +1,19 @@
+# Taskfile.yml
+version: '3'
+
+includes:
+  workflows:
+    taskfile: .github/Taskfile.yaml
+
+
+tasks:
+  clear:
+    desc: "Clear Ruff cache safely"
+    cmds:
+      - rm -rf .ruff_cache
+
+
+  test-workflow:
+    desc: "Test workflows using act"
+    cmds:
+      - task: workflows:linting

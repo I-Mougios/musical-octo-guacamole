@@ -1,0 +1,12 @@
+version: 3
+
+tasks:
+  linting:
+    desc: Run linting checks using act
+    cmds: 
+        - |
+          act pull_request \
+          --container-architecture linux/amd64 \
+          --rm \
+          -W .github/workflows/code_quality.yaml 
+        
