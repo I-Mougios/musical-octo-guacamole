@@ -17,3 +17,6 @@ tasks:
     desc: "Test workflows using act"
     cmds:
       - task: workflows:linting
+    
+    preconditions:
+      - sh: test -S /var/run/docker.sock || (sudo ln -sf ~/.docker/run/docker.sock /var/run/docker.sock && echo "Created symbolic link for Docker socket")

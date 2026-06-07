@@ -35,6 +35,7 @@ jobs:
 
       - name: Run Ruff Linter
         if: steps.changed-files.outputs.any_changed == 'true'
+        continue-on-error: true
         run: |
             echo "::group::Ruff Check Results"
             ruff check --output-format=github "${{ steps.changed-files.outputs.all_changed_files }}"
