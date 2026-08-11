@@ -1,0 +1,30 @@
+version: '3'
+
+tasks:
+  install:
+    desc: "Install dependencies using uv"
+    vars:
+      EXTRA: "{{.EXTRA | default \"\"}}"
+    cmds:
+      # If EXTRA is provided, it evaluates to "--extra <value>", otherwise empty
+      - uv sync {{if .EXTRA}}--extra {{.EXTRA}}{{end}}
+
+  build:
+    desc: Spins up the Kafka broker and UI using Docker Compose (rebuilds the images)
+    cmds: 
+      - docker compose up -d --build 
+
+  run:
+    desc: Spins up the Kafka broker and UI using Docker Compose.
+    cmds: 
+      - docker compose up -d
+
+  down:
+    desc: Stop Kafka services
+    cmds:
+      - docker compose down
+
+  logs:
+    desc: Follow Kafka logs
+    cmds:
+      - docker compose logs -f

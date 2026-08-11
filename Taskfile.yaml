@@ -5,6 +5,10 @@ includes:
   workflows:
     taskfile: .github/Taskfile.yaml
 
+  kafka-core:
+    dir: ./packages/kafka-core
+    taskfile: packages/kafka-core/Taskfile.yaml
+     
 
 tasks:
   clear:
