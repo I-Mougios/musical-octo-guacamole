@@ -38,12 +38,12 @@ jobs:
         continue-on-error: true
         run: |
             echo "::group::Ruff Check Results"
-            ruff check --output-format=github "${{ steps.changed-files.outputs.all_changed_files }}"
+            ruff check --output-format=github ${{ steps.changed-files.outputs.all_changed_files }}
             echo "::endgroup::"
 
       - name: Run Ruff Formatter Check
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
             echo "::group::Ruff Format Results"
-            ruff format --check "${{ steps.changed-files.outputs.all_changed_files }}"
+            ruff format --check ${{ steps.changed-files.outputs.all_changed_files }}
             echo "::endgroup::"
